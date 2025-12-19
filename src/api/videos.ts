@@ -62,3 +62,10 @@ export async function handlerUploadVideo(cfg: ApiConfig, req: BunRequest) {
 
   return respondWithJSON(200, video);
 }
+
+async function getVideoAspectRatio(filePath: string) {
+  const flags = ["-v", "error", "-select_streams", "v:0", "-show_entries"]
+  const proc = Bun.spawn(["bun", "-v"]);
+  
+  
+}
