@@ -15,7 +15,6 @@ export async function handlerUploadThumbnail(cfg: ApiConfig, req: BunRequest) {
 
   const token = getBearerToken(req.headers);
   const userID = validateJWT(token, cfg.jwtSecret);
-
   const video = getVideo(cfg.db, videoId);
   
   if (!video) {
